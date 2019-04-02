@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Xpert Digi Taxis.html</title>
+	
+	<!--1140 Grid styles for IE-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+	
+	<!-- Your styles -->
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/css3-mediaqueries.js">
+	</script>
+	
+	<!--End-->
+	
+	<!--Modernizr Style-->
+	<script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js">
+	</script>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'">
+	
+	<!--End-->
+	
+	
+	<!--Geolocation-->
+	<script type = "text/javascript" src="js/jquery-1.8.2.js"></script>
+	
+	
+		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAoxirxi4ahqoZLbLBkj4citjeRJqW-tDM&sensor=false"></script>
+	
+	<script type="text/javascript">
+		
+  
+		
+		
+		
+	var dartstations = [
+			["Connolly", 53.351660/*Latitude*/, -6.249708 /*Longitude*/, 3],
+			["Pearse", 53.343526, -6.247978, 2],
+			["Tara", 53.347608,-6.254144, 1],
+		];
+		
+		
+		
+		if (navigator.geolocation){
+			alert ("Geolocation is available.");    /*check browser*/
+		} else {
+			alert ("I'm sorry, but geolocation services are not supported by your browser.");
+		}
+						
+		function geo_success(position){
+			printLatLong(position.coords.latitude, position.coords.longitude);}
+
+		
+	
+		<!--Google Maps global map variab-->
+		var map;
+		$(document).ready(function () {
+	        var myOptions = {
+	          center: new google.maps.LatLng(53.5, -7),
+	          zoom: 4,
+	          mapTypeId: google.maps.MapTypeId.ROADMAP
+	        };
+
+			map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+		    $('#go').click(function () {
+		        <!-- test for presence of geolocation-->
+		        if (navigator && navigator.geolocation) {
+		            navigator.geolocation.getCurrentPosition(geo_success, geo_error);
+		        } else {
+		           error('Geolocation is not supported.');
+		        }
+		    });
+			
+			$('#dartgo').click(function geo_success(position){
+				printAddress(53.351660,-6.249708)}
+							  );
+			
+		});
+		
+		
+		
+		
+		
+		
+		<!--IFSC LatLng-->
+	     function geo_success(position) {
+		    printAddress(53.3489665, -6.243138);
+		}
+		
+		function geo_error(err){
+			if (err.code == 1){
+				error('The user denied the request for location information.')}
+				else if (err.code ==2) {
+					error('Your location information is unavailable.')
+				} else if (err.code ==3){
+					error('The request to get your location time out.')
+				} else {
+					error('An unknown error occurred while requesting your location.')
+				}
+		}
+		
+	
+		function printAddress(latitude, longitude) {
+		    // Create a Google Maps Geocoder object
+		    var geocoder = new google.maps.Geocoder();        
+
+		    // Change coordinates into a location 
+		    var yourLocation = new google.maps.LatLng(latitude, longitude);
+		<!--setup map and position on map-->
+			var myOptions = {
+        	zoom: 15,
+        	mapTypeId: google.maps.MapTypeId.ROADMAP,
+        	center: yourLocation
+    		}
+    		map = new google.maps.Map(document.getElementById("map"), myOptions);
+	
+	
+			var marker = new google.maps.Marker({
+			    position: yourLocation,
+			    title:"NCI"
+			});
+
+			marker.setMap(map);
+	
+		geocoder.geocode({ 'latLng': yourLocation }, function (results, status) {
+		        if (status == google.maps.GeocoderStatus.OK) {
+		            if (results[0]) {
+		                $('#local').html('Your Address:<br />' +
+		                    results[0].formatted_address);
+		            } else {
+		                error('Google did not return any results.');
+		            }
+		        } else {
+		            error("Reverse Geocoding failed due to: " + status);
+		        }
+		    });
+		}
+	
+			function error(msg){
+				alert(msg);
+			}
+	</script>
+	
+	
+	<!--End-->
+	
+				
+
+</head>
+
+
+
+<body>
+<div id="content">	
+	
+		
+		
+		<!--Canvas Logo-->
+
+		<canvas id="myCanvas" width="1500" height="100">
+			Your browser does not support the canvas element.
+		</canvas>
+
+		    <script>
+			var canvas = document.getElementById('myCanvas');
+		    var context = canvas.getContext('2d');
+		    context.rect(1,1,200,100)
+		  	var grd=context.createLinearGradient(0,0,200,100)
+			grd.addColorStop(0,"black");
+			grd.addColorStop(1, "yellow");
+			context.fillStyle=grd;
+			context.fill();
+
+		    </script>
+		<!--End-->		
+		<header> Xpert Digit Taxis</header>
+	
+			<div class="container">
+				<div class="row">
+					<div class="threecol">
+						
+					<p id="logo">XPERT DIGI TAXIS</p>
+					
+					
+				
+					</div>
+				</div>
+			</div>
+		
+			<div class="container">
+				<div class="row">	
+					<div class="onecol">
+						<p>Details</p>
+						<address>
+						<b>Address:</b></br>
+						CHQ Building ISFC,</br>
+						Stack 1,Georges Dock,</br>
+						Dublin 1.</br>
+						Ireland.</br>
+						
+						<b>Accounts Dept</b> <i>accounts@xperttaxis.com</i></br>
+						<b>Operations</b> <i>operations@xperttaxis.com</i></br>
+						<b>Booking Line: </b>+353 1 667 0777</br>
+						<b> </b></br>
+						<b>Drivers Line: </b>+353 1 255 8247</br>
+						<b>Fax: </b>+353 1 255 8201</br>
+						
+					</address>
+					
+					<aside>
+						Office Number: +353 1 255 8200
+					</aside>
+					<a href ="http://www.xperttaxis.com">Click here to visit Xpert Taxis Company web site</a>
+			
+				
+					</div>
+		
+					<div class="onecol">
+					<p>Introduction</p>
+					<article>
+					<hgroup> 
+						<b>Xpert Digi Taxis</b></br>
+						</br>
+						Xpert Digi Taxis is Ireland’s most technologically advanced taxi companies to date.  We offer a safe, reliable and efficient taxi service.
+					</hgroup>
+					</br>
+					<section>
+						Xpert Taxis also offers all customers the option of paying by credit or laser card. Xpert have become the leading provider of account services to the Corporate Market.  Now Dublin’s fastest growing and expanding taxi company, Xpert have extended services within their network encompassing Xpert Digi Taxis West (covering Lucan, Leixlip, and Celbridge area)
+					</section>
+					<hr>
+					
+					<section>
+						<b>More Value for Money</b></br>
+						Book all your taxi requirements through Xpert and expect a quality car, a professional driver and a printed receipt verifying distance travelled, total fare and license number of the taxi.  Avoid the embarrassing situation of not having enough cash and having the option to pay by credit card.
+					</section>
+					</article>
+					</div>
+		</div>
+	</div>
+	
+	
+	<div class="container">	
+		<div class="row">
+			<div class="twocol">
+				<p>Taxi Fares in Dublin,Ireland</p>
+				<section>
+					<h2>Taxi Start (Normal Tariff)</h2>
+					Mean 4.10 eur    Rang 4.00~4.5 
+					<hr>
+			
+					<h2>Taxi 1km (Normal Tariff)</h2>
+					Mean 1.20 eur    Rang 1.03~1.60
+					<hr>
+			
+					<h2>Taxi 1hour Waiting (Normal Tariff)</h2>
+					Mean 23.30 eur	Rang 21.60~30.00
+					
+			
+				</section>	
+		
+			</div>
+		
+			<div class="twocol">
+				<p>Location</p>
+				<input type="button" id="go" value="Click Me To View Our Location" />
+				<input type="button" id="dartgo" value="Click Me To View Dart Station" />
+				
+				<br/>
+				
+				
+				<h id="local"><b>Our location is:</b></h>
+				
+				<div id="map" style="width:450px; height:300px">></div>
+					
+				
+			</div>
+		
+		</div>
+<footer>This document was written in 2019.</footer>
+
+</div>
+</body>
+
+</html>
+
+
+
+

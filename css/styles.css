@@ -1,0 +1,153 @@
+
+
+/*Lay out for desktop version*/
+	body {
+	font-family: "Times New Romans", Helvetica, Arial, sans-serif;
+	font-size:15px;
+	
+	padding-top:50px;
+	padding-bottom:50px;
+	
+	}
+	
+	header{
+		color:white;
+	padding-left:70px;
+
+		/* Rotate div */
+		transform:rotate(5);
+		-ms-transform:rotate(5deg); /* --IE-- 9 */
+		-moz-transform:rotate(5deg); /* --Firefox--*/
+		-webkit-transform:rotate(5deg); /* --Safari and Chrome-- */
+		-o-transform:rotate(5deg); /* --Opera-- */
+	}
+	
+	
+	
+	
+	#myCanvas{
+	
+		padding-left:50px;
+		padding-top:2px;
+		
+	}
+	
+	footer{
+		color:#000099;
+		font-family:"Times New Romans";
+		font-style:italic;
+		font-weight:bold;
+		font-size:15px;
+	}
+	
+
+	address, section, article,aside{
+		line-height:1.5;
+	}
+			
+	#tran{
+		color:orange;
+		padding-left:750px;
+		
+	}
+	
+	#logo{
+		background-color:#FAEBD7;
+		text-align:center;
+		color:purple;
+		font-size:40px;
+		
+		}
+	
+	
+	
+	.container p {
+	color:white;
+	line-height: 40px;
+	background: #4682B4;
+	text-align: center;
+	margin: 10px 0px 0px 0px;
+	}
+	
+		
+	hgroup{
+		color:brown;
+	}
+	
+	aside{
+		color:blue;
+	}
+	
+	h2{
+		color:red;
+		font-style:italic;
+		font-size:17px;
+	}
+	
+	
+
+	
+/*----End----*/
+
+/*----Modernizr----*/
+	@font-face{
+		src:url('Pilgiche.ttf');
+		font-family:Pilgiche;
+	}
+	p{
+		font-family:'snowburst one', cursive;
+		color:purple;
+		font-style:italic;
+		font-weight:bold;
+	}
+
+/*----End----*/
+	
+/*----Boxshadow----*/
+	
+	.borderradius #content{
+		border: 10px solid #141414;background:#FAEBD7;
+		-webkit-border-radius:20px;
+		-moz-border-radius: 20px;
+		border-radius: 20px;
+	}
+	
+	
+	.boxshadow #content{
+		border:none;
+		-webkit-box-shadow: rgba(0,0,0, 5)3px 3px 6px;
+		-moz-box-shadow: rgba(0,0,0, 5) 3px 3px 6px;
+		box-shadow: rgba(0,0,0, 5) 3px 3px 6px;
+	}
+	
+/*----End----*/
+	
+
+
+
+
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		
+	}
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
